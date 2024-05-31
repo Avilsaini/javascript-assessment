@@ -1,0 +1,47 @@
+ 
+let nfts = [];
+
+ 
+function mintNFT(name, description, owner) {
+  
+    const nft = {
+        name: name,
+        description: description,
+        owner: owner,
+        timestamp: new Date().toISOString()  
+    };
+     
+    nfts.push(nft);
+}
+
+ 
+function listNFTs() {
+    
+    for (let i = 0; i < nfts.length; i++) {
+         
+        console.log("Name: " + nfts[i].name);
+        console.log("Description: " + nfts[i].description);
+        console.log("Owner: " + nfts[i].owner);
+        console.log("Timestamp: " + nfts[i].timestamp);
+        console.log("--------------------");  
+    }
+}
+
+ 
+function getTotalSupply() {
+    
+    return nfts.length;
+}
+
+ 
+
+// Mint  NFTs
+mintNFT("NFT #1", "This is the first NFT", "Avil");
+mintNFT("NFT #2", "This is the second NFT", "Ayush");
+mintNFT("NFT #3", "This is the third NFT", "Ram");
+
+// List of all NFTs
+listNFTs();
+
+ 
+console.log("Total Supply: " + getTotalSupply());
